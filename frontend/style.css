@@ -102,3 +102,25 @@ footer {
     border-radius: 7px;
 
 }
+
+.lista-tutores {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.lista-tutores h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.lista-tutores .card {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.lista-tutores .card h3 {
+    color: #557b62;
+    margin-bottom: 12px;
+}
+
