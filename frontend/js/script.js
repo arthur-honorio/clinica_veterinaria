@@ -7,14 +7,18 @@ let indiceEdicaoAnimal = null;
 
 // ABRIR E FECHAR FORMULÁRIO DE TUTOR
 
+function irPara(destino) {
+    location.href = destino
+}
+
 function mostrarFormularioTutor() {
     document.getElementById("formulario-tutor").hidden = false;
 }
 
-function fecharFormularioTutor() {
-    document.getElementById("formulario-tutor").hidden = true;
-    document.getElementById("formTutor").reset();
+function fecharFormulario() {
+    document.querySelector("form").reset();
     indiceEdicao = null;
+    irPara("index.html")
 }
 
 
@@ -40,12 +44,6 @@ function atualizarListaTutores() {
     });
 }
 
-function fecharFormularioAnimal() {
-    document.getElementById("formulario-animal").hidden = true;
-    document.getElementById("formAnimal").reset();
-    indiceEdicaoAnimal = null;
-}
-
 
 // CADASTRAR E EDITAR TUTOR
 
@@ -68,7 +66,7 @@ document.getElementById("formTutor").addEventListener("submit", function(event) 
     }
 
     mostrarTutores();
-    fecharFormularioTutor();
+    fecharFormulario();
 });
 
 
@@ -95,7 +93,7 @@ document.getElementById("formAnimal").addEventListener("submit", function(event)
     }
 
     mostrarAnimais();
-    fecharFormularioAnimal();
+    fecharFormulario();
 });
 
 

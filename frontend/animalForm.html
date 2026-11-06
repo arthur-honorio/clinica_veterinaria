@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amor de Bicho | Clínica Veterinária</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Amor de Bicho</h1>
+        <p>Clínica Veterinária</p>
+    </header>
+    <!-- FORMULÁRIO DE ANIMAL -->
+
+    <main>
+        <section class="formulario">
+
+            <h2>Cadastro de Animal</h2>
+
+            <form>
+
+                <label for="nomeAnimal">Nome do animal:</label>
+                <input type="text" id="nomeAnimal" required>
+
+                <label for="especie">Espécie:</label>
+                <input type="text" id="especie" required>
+
+                <label for="raca">Raça:</label>
+                <input type="text" id="raca" required>
+                <label for="tutorAnimal">Tutor responsável:</label>
+                <select id="tutorAnimal" required>
+                    <option value="">Selecione um tutor</option>
+                </select>
+
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" id="nascimento" required>
+
+                <div class="botoes-formulario">
+                    <button type="submit">Salvar Tutor</button>
+
+                    <button type="button" onclick="fecharFormulario()">
+                        Cancelar
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <p>Amor de Bicho 2026 - Clínica Veterinária</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
