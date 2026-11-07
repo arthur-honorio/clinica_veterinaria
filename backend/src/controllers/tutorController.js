@@ -16,4 +16,11 @@ async function inserir(request, response) {
   return response.status(201).json(tutorCriado);
 }
 
-module.exports = { listar, buscar, inserir };
+async function editar(request, response) {
+  const id = request.params.id;
+  const tutor = request.body;
+  const tutorEditado = await tutorService.editar(id, tutor);
+  return response.status(200).json(tutorEditado);
+}
+
+module.exports = { listar, buscar, inserir, editar };

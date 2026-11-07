@@ -37,3 +37,34 @@ Content-Type: application/json
   "telefone": "(85) 99999-8888",
   "endereco": "Rua 3"
 }
+
+### Editar tutor (espera 200)
+PUT {{baseUrl}}/tutores/3
+Content-Type: application/json
+
+{
+  "nome": "Ana Maria",
+  "telefone": "(85) 98888-7777",
+  "endereco": "Rua 4"
+}
+
+### Editar tutor inexistente (espera 404)
+PUT {{baseUrl}}/tutores/999
+Content-Type: application/json
+
+{
+  "nome": "Ninguém",
+  "telefone": "(85) 98888-7777",
+  "endereco": "Rua 4"
+}
+
+### Editar com telefone inválido (espera 400)
+PUT {{baseUrl}}/tutores/3
+Content-Type: application/json
+
+{
+  "nome": "Ana Maria",
+  "telefone": "abc",
+  "endereco": "Rua 4"
+}
+

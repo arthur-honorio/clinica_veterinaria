@@ -21,4 +21,13 @@ async function inserir(tutor) {
   return resultado.rows[0];
 }
 
-module.exports = { listar, buscar, inserir };
+async function editar(id, tutor) {
+  const { nome, telefone, endereco } = tutor;
+  const resultado = await pool.query(
+    `UPDATE tutores set nome = $1, telefone = $2, endereco = $3 where id = $4 RETURNING *`,
+    [nome, telefone, endereco, id],
+  );
+  return resultado.rows[0];
+}
+
+module.exports = { listar, buscar, inserir, editar };
