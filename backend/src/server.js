@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const poll = require("./config/db");
 const tutorRoutes = require("./routes/tutorRoutes");
+const ErroDeNegocio = require("./errors/ErroDeNegocio");
 
 const app = express();
 
@@ -15,6 +16,15 @@ app.get("/", async (request, response) => {
     mensagem: "API Amor de Bicho no ar!",
     horaDoBanco: resultado.rows[0].agora,
   });
+});
+
+app.use((erro, request, response, next) => {
+  if (erro instanceof ErroDeNegocio) {
+    const { status, message } = erro;
+    return response.status(status).json({ mensagem: message });
+  }
+  console.log(erro);
+  response.status(500).json({ mensagem: "Erro interno no servidor" });
 });
 
 app.listen(3000, () => {

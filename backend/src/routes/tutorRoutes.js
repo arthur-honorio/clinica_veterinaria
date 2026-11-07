@@ -1,9 +1,10 @@
 const express = require("express");
-const tutorController = require("../controllers/tutorController");
+const { listar, buscar, inserir } = require("../controllers/tutorController");
 
 const router = express.Router();
 
-router.get("/", tutorController.listar);
-router.get("/:id", tutorController.buscarTutor);
+router.get("/", listar);
+router.get("/:id", buscar);
+router.post("/", inserir);
 
 module.exports = router;

@@ -1,16 +1,19 @@
 const tutorService = require("../services/tutorService");
 
 async function listar(request, response) {
-  const tutores = await tutorService.listarTutores();
+  const tutores = await tutorService.listar();
   response.json(tutores);
 }
 
-async function buscarTutor(request, response) {
+async function buscar(request, response) {
   const id = request.params.id;
-  const tutor = await tutorService.buscarTutor(id);
-  if (!tutor)
-    return response.status(404).json({ mensagem: "Tutor não encontrado" });
+  const tutor = await tutorService.buscar(id);
   response.json(tutor);
 }
 
-module.exports = { listar, buscarTutor };
+async function inserir(request, response) {
+  const tutorCriado = await tutorService.inserir(request.body);
+  return response.status(201).json(tutorCriado);
+}
+
+module.exports = { listar, buscar, inserir };

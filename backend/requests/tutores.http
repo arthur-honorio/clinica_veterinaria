@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000
+
+### Listar tutores
+GET {{baseUrl}}/tutores
+
+### Buscar tutor existente
+GET {{baseUrl}}/tutores/1
+
+### Buscar tutor inexistente (espera 404)
+GET {{baseUrl}}/tutores/999
+
+### Cadastrar tutor
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "nome": "Ana",
+  "telefone": "(85) 99999-8888",
+  "endereco": "Rua 3"
+}
+
+### Cadastrar com telefone inválido (espera 400)
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "nome": "Ana",
+  "telefone": "123",
+  "endereco": "Rua 3"
+}
+
+### Cadastrar sem nome (espera 400)
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "telefone": "(85) 99999-8888",
+  "endereco": "Rua 3"
+}
