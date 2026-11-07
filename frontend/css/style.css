@@ -94,7 +94,8 @@ main {
 }
 
 button,
-.card a {
+.card a,
+.lista-titulo a {
   padding: 10px 15px;
   background-color: #557b62;
   color: white;
@@ -145,23 +146,9 @@ button:hover {
   width: 100%;
 }
 
-.lista-tutores {
-  max-width: 700px;
-  margin: 40px auto;
-}
-
-.lista-tutores h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.lista-tutores .card {
+.lista-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.lista-tutores .card h3 {
-  color: #557b62;
-  margin-bottom: 12px;
 }
