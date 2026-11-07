@@ -1,7 +1,9 @@
 const pool = require("../config/db");
 
 async function listar() {
-  const resultado = await pool.query("SELECT * from tutores ORDER BY nome");
+  const resultado = await pool.query(
+    'SELECT * FROM tutores ORDER BY nome COLLATE "pt-BR-x-icu"',
+  );
   return resultado.rows;
 }
 

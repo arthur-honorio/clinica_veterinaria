@@ -14,9 +14,9 @@ POST {{baseUrl}}/tutores
 Content-Type: application/json
 
 {
-  "nome": "Ana",
-  "telefone": "(85) 99999-8888",
-  "endereco": "Rua 3"
+  "nome": "Álvaro",
+  "telefone": "(85) 99999-1111",
+  "endereco": "Rua 8"
 }
 
 ### Cadastrar com telefone inválido (espera 400)
