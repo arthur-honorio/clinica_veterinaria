@@ -32,4 +32,12 @@ async function editar(id, tutor) {
   return resultado.rows[0];
 }
 
-module.exports = { listar, buscar, inserir, editar };
+async function remover(id) {
+  const resultado = await pool.query(
+    `DELETE FROM tutores WHERE id = $1 RETURNING 1`,
+    [id],
+  );
+  return resultado.rows[0];
+}
+
+module.exports = { listar, buscar, inserir, editar, remover };

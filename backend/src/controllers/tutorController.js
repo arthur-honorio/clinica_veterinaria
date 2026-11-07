@@ -23,4 +23,10 @@ async function editar(request, response) {
   return response.status(200).json(tutorEditado);
 }
 
-module.exports = { listar, buscar, inserir, editar };
+async function remover(request, response) {
+  const id = request.params.id;
+  await tutorService.remover(id);
+  return response.status(204).send();
+}
+
+module.exports = { listar, buscar, inserir, editar, remover };

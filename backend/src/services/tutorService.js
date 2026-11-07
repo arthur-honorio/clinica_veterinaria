@@ -25,6 +25,11 @@ async function editar(id, tutor) {
   return tutorModel.editar(id, tutor);
 }
 
+async function remover(id) {
+  await buscar(id);
+  return tutorModel.remover(id);
+}
+
 function validarTutor(tutor) {
   const { nome, telefone, endereco } = tutor;
   if (!nome || !telefone || !endereco) {
@@ -37,4 +42,4 @@ function validarTutor(tutor) {
   }
 }
 
-module.exports = { listar, buscar, inserir, editar };
+module.exports = { listar, buscar, inserir, editar, remover };

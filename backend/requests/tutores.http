@@ -68,3 +68,8 @@ Content-Type: application/json
   "endereco": "Rua 4"
 }
 
+### Remover tutor (espera 204)
+DELETE {{baseUrl}}/tutores/4
+
+### Remover tutor inexistente (espera 404)
+DELETE {{baseUrl}}/tutores/999
