@@ -11,22 +11,10 @@ function irPara(destino) {
     location.href = destino
 }
 
-function mostrarFormularioTutor() {
-    document.getElementById("formulario-tutor").hidden = false;
-}
-
 function fecharFormulario() {
     document.querySelector("form").reset();
     indiceEdicao = null;
-    irPara("index.html")
-}
-
-
-// ABRIR E FECHAR FORMULÁRIO DE ANIMAL
-
-function mostrarFormularioAnimal() {
-    atualizarListaTutores();
-    document.getElementById("formulario-animal").hidden = false;
+    history.back()
 }
 
 function atualizarListaTutores() {
@@ -47,7 +35,7 @@ function atualizarListaTutores() {
 
 // CADASTRAR E EDITAR TUTOR
 
-document.getElementById("formTutor").addEventListener("submit", function(event) {
+document.getElementsByTagName("Form").addEventListener("submit", function(event) {
     event.preventDefault();
 
     const tutor = {
