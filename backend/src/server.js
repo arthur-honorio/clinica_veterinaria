@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const poll = require("./config/db");
+const pool = require("./config/db");
+
 const tutorRoutes = require("./routes/tutorRoutes");
 const animalRoutes = require("./routes/animalRoutes");
 
@@ -14,7 +15,7 @@ app.use("/tutores", tutorRoutes);
 app.use("/animais", animalRoutes);
 
 app.get("/", async (request, response) => {
-  const resultado = await poll.query("SELECT NOW() AS agora");
+  const resultado = await pool.query("SELECT NOW() AS agora");
   response.json({
     mensagem: "API Amor de Bicho no ar!",
     horaDoBanco: resultado.rows[0].agora,
