@@ -20,7 +20,7 @@ async function editar(request, response) {
   const id = request.params.id;
   const animal = request.body;
   const animalEditado = await animalService.editar(id, animal);
-  return response.status(200).json(animalEditado);
+  return response.json(animalEditado);
 }
 
 async function remover(request, response) {

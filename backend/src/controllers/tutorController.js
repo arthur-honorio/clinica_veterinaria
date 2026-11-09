@@ -20,7 +20,7 @@ async function editar(request, response) {
   const id = request.params.id;
   const tutor = request.body;
   const tutorEditado = await tutorService.editar(id, tutor);
-  return response.status(200).json(tutorEditado);
+  return response.json(tutorEditado);
 }
 
 async function remover(request, response) {
