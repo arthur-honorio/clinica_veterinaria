@@ -1,0 +1,110 @@
+@baseUrl = http://localhost:3000
+
+### Listar animais
+GET {{baseUrl}}/animais
+
+### Buscar animal existente
+GET {{baseUrl}}/animais/1
+
+### Buscar animal inexistente (espera 404)
+GET {{baseUrl}}/animais/999
+
+### Cadastrar animal
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Tauís",
+  "especie": "Cão",
+  "raca": "Fox Paulistinha",
+  "tutor_id": 3,
+  "nascimento": "2019-05-24"
+}
+
+### Cadastrar animal com nascimento no futuro (esperar 400)
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Tauís",
+  "especie": "Cão",
+  "raca": "Fox Paulistinha",
+  "tutor_id": 3,
+  "nascimento": "2029-05-24"
+}
+
+### Cadastrar animal com nascimento no formato errado (esperar 400)
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Tauís",
+  "especie": "Cão",
+  "raca": "Fox Paulistinha",
+  "tutor_id": 3,
+  "nascimento": "20-05-2024"
+}
+
+### Cadastrar sem tutor_id (espera 400)
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Dona Flor",
+  "especie": "Gato",
+  "raca": "Persa",
+  "nascimento": "2026-02-24"
+}
+
+### Cadastrar sem nome (espera 400)
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "especie": "Cão",
+  "raca": "Llasa Apsu",
+  "tutor_id": 2,
+  "nascimento": "2021-05-24"
+}
+
+### Editar animal (espera 200)
+PUT {{baseUrl}}/animais/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Capitolina Honorio de Oliveira",
+  "especie": "Gato",
+  "raca": "Persa",
+  "tutor_id": 1,
+  "nascimento": "2026-05-24"
+}
+
+### Editar animal inexistente (espera 404)
+PUT {{baseUrl}}/animais/999
+Content-Type: application/json
+
+{
+  "nome": "Gira Fona",
+  "especie": "Girafa",
+  "raca": "Girafa Girafoles",
+  "tutor_id": 1,
+  "nascimento": "2018-05-24"
+}
+
+### Editar com tutor_id inválido (espera 400)
+PUT {{baseUrl}}/animais/3
+Content-Type: application/json
+
+{
+  "nome": "Ben",
+  "especie": "Cão",
+  "raca": "Llasa Apsu",
+  "tutor_id": 999,
+  "nascimento": "2021-05-24"
+}
+
+### Remover animal (espera 204)
+DELETE {{baseUrl}}/animais/4
+
+### Remover animal inexistente (espera 404)
+DELETE {{baseUrl}}/animais/999

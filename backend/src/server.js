@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const poll = require("./config/db");
 const tutorRoutes = require("./routes/tutorRoutes");
+const animalRoutes = require("./routes/animalRoutes");
+
 const ErroDeNegocio = require("./errors/ErroDeNegocio");
 
 const app = express();
@@ -9,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/tutores", tutorRoutes);
+app.use("/animais", animalRoutes);
 
 app.get("/", async (request, response) => {
   const resultado = await poll.query("SELECT NOW() AS agora");

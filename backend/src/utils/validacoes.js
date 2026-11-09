@@ -3,4 +3,12 @@ function telefoneValido(telefone) {
   return typeof telefone == "string" && regex.test(telefone);
 }
 
-module.exports = { telefoneValido };
+function dataValida(data) {
+  return !isNaN(new Date(data));
+}
+
+function dataNoFuturo(data) {
+  return new Date(data) > new Date();
+}
+
+module.exports = { telefoneValido, dataValida, dataNoFuturo };
