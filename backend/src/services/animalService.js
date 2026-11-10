@@ -7,6 +7,14 @@ async function listar() {
   return animalModel.listar();
 }
 
+async function listarAnimaisTutor(tutor_id) {
+  const tutor = await tutorModel.buscar(tutor_id);
+  if (!tutor) {
+    throw new ErroDeNegocio("Tutor não encontrado", 404);
+  }
+  return animalModel.listarAnimaisTutor(tutor_id);
+}
+
 async function buscar(id) {
   const animal = await animalModel.buscar(id);
   if (!animal) {
@@ -49,4 +57,11 @@ async function validarDadosAnimal(animal) {
   }
 }
 
-module.exports = { listar, buscar, inserir, editar, remover };
+module.exports = {
+  listar,
+  listarAnimaisTutor,
+  buscar,
+  inserir,
+  editar,
+  remover,
+};

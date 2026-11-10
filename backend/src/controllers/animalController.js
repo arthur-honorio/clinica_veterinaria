@@ -5,6 +5,12 @@ async function listar(request, response) {
   response.json(animais);
 }
 
+async function listarAnimaisTutor(request, response) {
+  const { tutor_id } = request.params;
+  const animais = await animalService.listarAnimaisTutor(tutor_id);
+  response.json(animais);
+}
+
 async function buscar(request, response) {
   const { id } = request.params;
   const animal = await animalService.buscar(id);
@@ -29,4 +35,11 @@ async function remover(request, response) {
   return response.status(204).send();
 }
 
-module.exports = { listar, buscar, inserir, editar, remover };
+module.exports = {
+  listar,
+  listarAnimaisTutor,
+  buscar,
+  inserir,
+  editar,
+  remover,
+};
