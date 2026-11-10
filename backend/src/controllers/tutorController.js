@@ -6,7 +6,7 @@ async function listar(request, response) {
 }
 
 async function buscar(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   const tutor = await tutorService.buscar(id);
   response.json(tutor);
 }
@@ -17,14 +17,14 @@ async function inserir(request, response) {
 }
 
 async function editar(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   const tutor = request.body;
   const tutorEditado = await tutorService.editar(id, tutor);
   return response.json(tutorEditado);
 }
 
 async function remover(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   await tutorService.remover(id);
   return response.status(204).send();
 }

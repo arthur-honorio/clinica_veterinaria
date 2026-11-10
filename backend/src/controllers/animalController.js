@@ -6,7 +6,7 @@ async function listar(request, response) {
 }
 
 async function buscar(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   const animal = await animalService.buscar(id);
   response.json(animal);
 }
@@ -17,14 +17,14 @@ async function inserir(request, response) {
 }
 
 async function editar(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   const animal = request.body;
   const animalEditado = await animalService.editar(id, animal);
   return response.json(animalEditado);
 }
 
 async function remover(request, response) {
-  const id = request.params.id;
+  const { id } = request.params;
   await animalService.remover(id);
   return response.status(204).send();
 }
