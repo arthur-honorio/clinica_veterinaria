@@ -1,14 +1,5 @@
 @baseUrl = http://localhost:3000
 
-### Listar tutores
-GET {{baseUrl}}/tutores
-
-### Buscar tutor existente
-GET {{baseUrl}}/tutores/1
-
-### Buscar tutor inexistente (espera 404)
-GET {{baseUrl}}/tutores/999
-
 ### Cadastrar tutor 1
 POST {{baseUrl}}/tutores
 Content-Type: application/json
@@ -68,13 +59,22 @@ Content-Type: application/json
   "endereco": "Rua 3"
 }
 
+### Listar tutores
+GET {{baseUrl}}/tutores
+
+### Buscar tutor existente
+GET {{baseUrl}}/tutores/1
+
+### Buscar tutor inexistente (espera 404)
+GET {{baseUrl}}/tutores/999
+
 ### Editar tutor (espera 200)
 PUT {{baseUrl}}/tutores/3
 Content-Type: application/json
 
 {
   "nome": "João",
-  "telefone": "5585988887777",
+  "telefone": "5585966667777",
   "endereco": "Rua 4"
 }
 

@@ -1,15 +1,42 @@
 @baseUrl = http://localhost:3000
 
-### Listar animais
-GET {{baseUrl}}/animais
+### Cadastrar 1
+POST {{baseUrl}}/animais
+Content-Type: application/json
 
-### Buscar animal existente
-GET {{baseUrl}}/animais/1
+{
+  "nome": "Dona Flor",
+  "especie": "Gato",
+  "raca": "Persa",
+  "nascimento": "2026-02-24",
+  "tutor_id": 1
+}
 
-### Buscar animal inexistente (espera 404)
-GET {{baseUrl}}/animais/999
+### Cadastrar 2
+POST {{baseUrl}}/animais
+Content-Type: application/json
 
-### Cadastrar animal
+{
+  "nome": "Capitu",
+  "especie": "Gato",
+  "raca": "Persa",
+  "nascimento": "2026-05-24",
+  "tutor_id": 1
+}
+
+### Cadastrar 3
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Ben",
+  "especie": "Cão",
+  "raca": "Llasa Apsu",
+  "nascimento": "2021-05-24",
+  "tutor_id": 2
+}
+
+### Cadastrar 4
 POST {{baseUrl}}/animais
 Content-Type: application/json
 
@@ -21,7 +48,7 @@ Content-Type: application/json
   "nascimento": "2019-05-24"
 }
 
-### Cadastrar animal com nascimento no futuro (esperar 400)
+### Cadastrar com nascimento no futuro (esperar 400)
 POST {{baseUrl}}/animais
 Content-Type: application/json
 
@@ -33,7 +60,7 @@ Content-Type: application/json
   "nascimento": "2029-05-24"
 }
 
-### Cadastrar animal com nascimento no formato errado (esperar 400)
+### Cadastrar com nascimento no formato errado (esperar 400)
 POST {{baseUrl}}/animais
 Content-Type: application/json
 
@@ -43,6 +70,18 @@ Content-Type: application/json
   "raca": "Fox Paulistinha",
   "tutor_id": 3,
   "nascimento": "20-05-2024"
+}
+
+### Cadastrar com tutor_id não encontrado (espera 400)
+POST {{baseUrl}}/animais
+Content-Type: application/json
+
+{
+  "nome": "Dona Flor",
+  "especie": "Gato",
+  "raca": "Persa",
+  "tutor_id": 999,
+  "nascimento": "2026-02-24"
 }
 
 ### Cadastrar sem tutor_id (espera 400)
@@ -67,8 +106,26 @@ Content-Type: application/json
   "nascimento": "2021-05-24"
 }
 
-### Editar animal (espera 200)
-PUT {{baseUrl}}/animais/1
+### Listar animais
+GET {{baseUrl}}/animais
+
+### Listar animais de um tutor existente (esperar 200)
+GET {{baseUrl}}/animais/tutor/1
+
+### Listar animais de um tutor sem animais (esperar 200)
+GET {{baseUrl}}/animais/tutor/4
+
+### Listar animais de um tutor não encontrado (esperar 404)
+GET {{baseUrl}}/animais/tutor/999
+
+### Buscar existente
+GET {{baseUrl}}/animais/1
+
+### Buscar inexistente (espera 404)
+GET {{baseUrl}}/animais/999
+
+### Editar (espera 200)
+PUT {{baseUrl}}/animais/2
 Content-Type: application/json
 
 {
@@ -79,7 +136,7 @@ Content-Type: application/json
   "nascimento": "2026-05-24"
 }
 
-### Editar animal inexistente (espera 404)
+### Editar inexistente (espera 404)
 PUT {{baseUrl}}/animais/999
 Content-Type: application/json
 
@@ -103,8 +160,8 @@ Content-Type: application/json
   "nascimento": "2021-05-24"
 }
 
-### Remover animal (espera 204)
+### Remover (espera 204)
 DELETE {{baseUrl}}/animais/4
 
-### Remover animal inexistente (espera 404)
+### Remover inexistente (espera 404)
 DELETE {{baseUrl}}/animais/999
