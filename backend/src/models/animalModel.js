@@ -7,6 +7,14 @@ async function listar() {
   return resultado.rows;
 }
 
+async function listarAnimaisTutor(tutor_id) {
+  const resultado = await pool.query(
+    `SELECT * FROM animais WHERE tutor_id = $1`,
+    [tutor_id],
+  );
+  return resultado.rows;
+}
+
 async function buscar(id) {
   const resultado = await pool.query("SELECT * from animais WHERE id = $1", [
     id,
@@ -40,4 +48,11 @@ async function remover(id) {
   return resultado.rows[0];
 }
 
-module.exports = { listar, buscar, inserir, editar, remover };
+module.exports = {
+  listar,
+  listarAnimaisTutor,
+  buscar,
+  inserir,
+  editar,
+  remover,
+};

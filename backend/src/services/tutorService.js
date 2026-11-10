@@ -1,4 +1,5 @@
 const tutorModel = require("../models/tutorModel");
+const animalModel = require("../models/animalModel");
 const { telefoneValido } = require("../utils/validacoes");
 const ErroDeNegocio = require("../errors/ErroDeNegocio");
 
@@ -27,6 +28,13 @@ async function editar(id, tutor) {
 
 async function remover(id) {
   await buscar(id);
+  const animaisTutor = await animalModel.listarAnimaisTutor(id);
+  if (animaisTutor.length > 0) {
+    throw new ErroDeNegocio(
+      "Tutores com animais cadastrados não podem ser removidos",
+      409,
+    );
+  }
   return tutorModel.remover(id);
 }
 

@@ -73,3 +73,6 @@ DELETE {{baseUrl}}/tutores/4
 
 ### Remover tutor inexistente (espera 404)
 DELETE {{baseUrl}}/tutores/999
+
+### Remover tutor com animais (espera 409)
+DELETE {{baseUrl}}/tutores/1
