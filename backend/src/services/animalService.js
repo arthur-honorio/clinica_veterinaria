@@ -16,13 +16,13 @@ async function buscar(id) {
 }
 
 async function inserir(animal) {
-  await validarAnimal(animal);
+  await validarDadosAnimal(animal);
   return animalModel.inserir(animal);
 }
 
 async function editar(id, animal) {
   await buscar(id);
-  await validarAnimal(animal);
+  await validarDadosAnimal(animal);
   return animalModel.editar(id, animal);
 }
 
@@ -31,7 +31,7 @@ async function remover(id) {
   return animalModel.remover(id);
 }
 
-async function validarAnimal(animal) {
+async function validarDadosAnimal(animal) {
   const { nome, especie, raca, tutor_id, nascimento } = animal;
   if (!nome || !especie || !raca || !tutor_id || !nascimento) {
     throw new ErroDeNegocio(

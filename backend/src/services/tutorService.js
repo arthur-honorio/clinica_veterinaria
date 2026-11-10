@@ -16,13 +16,13 @@ async function buscar(id) {
 }
 
 async function inserir(tutor) {
-  validarTutor(tutor);
+  validarDadosTutor(tutor);
   return tutorModel.inserir(tutor);
 }
 
 async function editar(id, tutor) {
   await buscar(id);
-  validarTutor(tutor);
+  validarDadosTutor(tutor);
   return tutorModel.editar(id, tutor);
 }
 
@@ -38,7 +38,7 @@ async function remover(id) {
   return tutorModel.remover(id);
 }
 
-function validarTutor(tutor) {
+function validarDadosTutor(tutor) {
   const { nome, telefone, endereco } = tutor;
   if (!nome || !telefone || !endereco) {
     throw new ErroDeNegocio("O tutor deve ter Nome, Telefone e Endereço");
