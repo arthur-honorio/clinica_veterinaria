@@ -9,14 +9,44 @@ GET {{baseUrl}}/tutores/1
 ### Buscar tutor inexistente (espera 404)
 GET {{baseUrl}}/tutores/999
 
-### Cadastrar tutor
+### Cadastrar tutor 1
 POST {{baseUrl}}/tutores
 Content-Type: application/json
 
 {
   "nome": "Álvaro",
-  "telefone": "(85) 99999-1111",
+  "telefone": "5585999991111",
   "endereco": "Rua 8"
+}
+
+### Cadastrar tutor 2
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "nome": "Ana Maria",
+  "telefone": "5585988887777",
+  "endereco": "Rua 4"
+}
+
+### Cadastrar tutor 3
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "telefone": "5585990908989",
+  "endereco": "Rua 1"
+}
+
+### Cadastrar tutor 4
+POST {{baseUrl}}/tutores
+Content-Type: application/json
+
+{
+  "nome": "Maria",
+  "telefone": "5585989899090",
+  "endereco": "Rua 2"
 }
 
 ### Cadastrar com telefone inválido (espera 400)
@@ -25,7 +55,7 @@ Content-Type: application/json
 
 {
   "nome": "Ana",
-  "telefone": "123",
+  "telefone": "85 9123-1234",
   "endereco": "Rua 3"
 }
 
@@ -34,7 +64,7 @@ POST {{baseUrl}}/tutores
 Content-Type: application/json
 
 {
-  "telefone": "(85) 99999-8888",
+  "telefone": "5585999998888",
   "endereco": "Rua 3"
 }
 
@@ -43,8 +73,8 @@ PUT {{baseUrl}}/tutores/3
 Content-Type: application/json
 
 {
-  "nome": "Ana Maria",
-  "telefone": "(85) 98888-7777",
+  "nome": "João",
+  "telefone": "5585988887777",
   "endereco": "Rua 4"
 }
 
@@ -54,7 +84,7 @@ Content-Type: application/json
 
 {
   "nome": "Ninguém",
-  "telefone": "(85) 98888-7777",
+  "telefone": "5585988887777",
   "endereco": "Rua 4"
 }
 
@@ -64,7 +94,7 @@ Content-Type: application/json
 
 {
   "nome": "Ana Maria",
-  "telefone": "abc",
+  "telefone": "85 99992-0009",
   "endereco": "Rua 4"
 }
 

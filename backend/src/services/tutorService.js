@@ -45,7 +45,7 @@ function validarTutor(tutor) {
   }
   if (!telefoneValido(telefone)) {
     throw new ErroDeNegocio(
-      "Telefone inválido. Formatos aceitos: (XX) XXXXX-XXXX ou (XX) XXXX-XXXX",
+      "Telefone inválido. Formatos aceitos (somente dígitos): 55 + DDD + 8 ou 9 dígitos: 55XXXXXXXXXX ou 55XXXXXXXXXXX",
     );
   }
 }
