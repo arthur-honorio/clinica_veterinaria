@@ -1,48 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Amor de Bicho | Clínica Veterinária</title>
+    <title>Animais | Amor de Bicho</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>Amor de Bicho</h1>
-        <p>Clínica Veterinária</p>
+        <a href="index.html" class="marca">
+            <h1>Amor de Bicho</h1>
+            <p>Clínica Veterinária</p>
+        </a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="tutores.html">Tutores</a>
+            <a href="animais.html" aria-current="page">Animais</a>
+        </nav>
     </header>
-    <!-- FORMULÁRIO DE ANIMAL -->
 
     <main>
-        <section class="formulario">
+        <section class="painel">
+            <div class="lista-titulo">
+                <h2 id="tituloLista">Animais cadastrados</h2>
+                <a class="botao" id="linkCadastrarAnimal" href="animalForm.html">+ Cadastrar animal</a>
+            </div>
 
-            <h2>Animais Cadastrados</h2>
+            <div class="filtro">
+                <label for="filtroTutor">Filtrar por tutor:</label>
+                <select id="filtroTutor">
+                    <option value="">Todos os tutores</option>
+                </select>
+            </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Espécie</th>
-                        <th>Raça</th>
-                        <th>Tutor</th>
-                        <th>Nascimento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div id="mensagem" class="mensagem" role="alert" hidden></div>
 
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Espécie</th>
+                            <th>Raça</th>
+                            <th>Tutor</th>
+                            <th>Nascimento</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaAnimais">
+                        <tr><td colspan="6" class="vazio">Carregando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>Amor de Bicho 2026 - Clínica Veterinária</p>
     </footer>
-    <script src="js/script.js"></script>
-    <script src="js/listarAnimais.js"></script>
 
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/animais.js"></script>
 </body>
 
 </html>
