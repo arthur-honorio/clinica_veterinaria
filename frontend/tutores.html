@@ -4,48 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Amor de Bicho | Clínica Veterinária</title>
+    <title>Tutores | Amor de Bicho</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>Amor de Bicho</h1>
-        <p>Clínica Veterinária</p>
+        <a href="index.html" class="marca">
+            <h1>Amor de Bicho</h1>
+            <p>Clínica Veterinária</p>
+        </a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="tutores.html" aria-current="page">Tutores</a>
+            <a href="animais.html">Animais</a>
+        </nav>
     </header>
+
     <main>
-        <!-- FORMULÁRIO DE TUTOR -->
-
-        <section class="formulario">
-
+        <section class="painel">
             <div class="lista-titulo">
                 <h2>Tutores</h2>
-                <a href="tutorForm.html">
-                    Cadastrar
-                </a>
+                <a class="botao" href="tutorForm.html">+ Cadastrar tutor</a>
             </div>
 
-            <table>
-                <thead>
-                    <th>Nome</th>
-                    <th>Espécie</th>
-                    <th>Raça</th>
-                    <th>Tutor</th>
-                    <th>Nascimento</th>
-                    <th></th>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div id="mensagem" class="mensagem" role="alert" hidden></div>
 
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Endereço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaTutores">
+                        <tr><td colspan="4" class="vazio">Carregando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>Amor de Bicho 2026 - Clínica Veterinária</p>
     </footer>
-    <script src="js/script.js"></script>
 
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/tutores.js"></script>
 </body>
 
 </html>
