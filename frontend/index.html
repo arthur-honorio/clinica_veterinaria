@@ -4,62 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Amor de Bicho | Clínica Veterinária</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <header>
-        <h1>Amor de Bicho</h1>
-        <p>Clínica Veterinária</p>
+        <a href="index.html" class="marca">
+            <h1>Amor de Bicho</h1>
+            <p>Clínica Veterinária</p>
+        </a>
+        <nav>
+            <a href="index.html" aria-current="page">Início</a>
+            <a href="tutores.html">Tutores</a>
+            <a href="animais.html">Animais</a>
+        </nav>
     </header>
 
-    <main id="home">
+    <main>
         <section class="boas-vindas">
             <h2>Bem-vindo à Amor de Bicho!</h2>
             <p>Cuidando de quem faz parte da sua família.</p>
         </section>
 
         <section class="menu">
-            <section>
+            <article class="menu-cartao">
                 <h2>Tutores</h2>
-                <p>Cadastre ou acesse a lista</p>
-                <div class="card">
-                    <a href="tutorForm.html">
-                        Cadastrar
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="tutores.html">
-                        Acessar Lista
-                    </a>
-                </div>
-            </section>
-            <section>
+                <p>Cadastre ou acesse a lista de tutores.</p>
+                <a class="botao" href="tutorForm.html">Cadastrar tutor</a>
+                <a class="botao botao-secundario" href="tutores.html">Ver lista</a>
+            </article>
+            <article class="menu-cartao">
                 <h2>Animais</h2>
-                <p>Cadastre ou acesse a lista</p>
-                <div class="card">
-                    <a href="animalForm.html">
-                        Cadastrar
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="animais.html">
-                        Acessar Lista
-                    </a>
-                </div>
-            </section>
+                <p>Cadastre ou acesse a lista de animais.</p>
+                <a class="botao" href="animalForm.html">Cadastrar animal</a>
+                <a class="botao botao-secundario" href="animais.html">Ver lista</a>
+            </article>
         </section>
     </main>
 
     <footer>
         <p>Amor de Bicho 2026 - Clínica Veterinária</p>
     </footer>
-
-    <script src="script.js"></script>
-
 </body>
 
 </html>
