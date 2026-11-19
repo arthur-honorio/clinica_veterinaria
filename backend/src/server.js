@@ -31,6 +31,11 @@ app.use((erro, request, response, next) => {
   response.status(500).json({ mensagem: "Erro interno no servidor" });
 });
 
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
-});
+// Na Vercel o app roda como função serverless: ela importa o app e cuida das requisições.
+if (!process.env.VERCEL) {
+  app.listen(3000, () => {
+    console.log("Servidor rodando em http://localhost:3000");
+  });
+}
+
+module.exports = app;
