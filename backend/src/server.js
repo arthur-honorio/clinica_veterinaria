@@ -17,7 +17,7 @@ app.use("/animais", animalRoutes);
 app.get("/", async (request, response) => {
   const resultado = await pool.query("SELECT NOW() AS agora");
   response.json({
-    mensagem: "API Amor de Bicho no ar!",
+    mensagem: "API Clínica Patas & Cia no ar!",
     horaDoBanco: resultado.rows[0].agora,
   });
 });
