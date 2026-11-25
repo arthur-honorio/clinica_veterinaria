@@ -1,6 +1,6 @@
 // Endereço da API (backend).
 // Rodando localmente, usa http://localhost:3000.
-// Depois de publicar o backend, troque URL_API_PUBLICADA pelo link real (ex.: Render, Railway).
+// Fora do localhost (aplicação publicada), usa a API publicada na Vercel.
 const URL_API_LOCAL = "http://localhost:3000";
 const URL_API_PUBLICADA = "https://clinica-patas-e-cia-api.vercel.app";
 
